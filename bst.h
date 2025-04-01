@@ -347,7 +347,7 @@ BinarySearchTree<Key, Value>::iterator::operator++()
     // TODO
 
     // Base Case to check whether current_ is empty
-    if (!current_) {
+    if (current_ == nullptr) {
      return *this;
     }
 
