@@ -353,7 +353,7 @@ BinarySearchTree<Key, Value>::iterator::operator++()
 
     // goint through the bst to see if their is something to right of current_
     if (current_->getRight()) {
-        current_ = current_->getRight(); // set to porper right
+        current_ = current_->getRight(); // set to proper right
         while (current_->getLeft()) { // getting the left 
             current_ = current_->getLeft(); // set to proper left
         }
@@ -696,8 +696,8 @@ bool BinarySearchTree<Key, Value>::checkBalance(Node<Key, Value>* node) const
     int rightHeight = height(node->getRight()); // get the height of right node with helper function
 
     // Check if the current node is balanced
-    if (std::abs(leftHeight - rightHeight) > 1) {
-        return false;
+    if (leftHeight - rightHeight > 1 || rightHeight - leftHeight > 1) {
+      return false;
     }
 
     // Recursively check if the left and right subtrees are balanced
